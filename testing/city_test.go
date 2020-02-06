@@ -99,7 +99,7 @@ func testCityDeletion(city gin.H, status int) func(*testing.T) {
 		reqerr = RequestToWM(req)
 
 		if reqerr != nil {
-			t.Error(fmt.Sprintf("Error in updating the city %v ", city))
+			t.Error(fmt.Sprintf("Error in deleting the city %v ", city))
 		}
 	}
 

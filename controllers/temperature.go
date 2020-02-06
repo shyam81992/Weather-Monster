@@ -42,10 +42,10 @@ func CreateTemperature(c *gin.Context) {
 		temp.Timestamp = timestamp.Unix()
 
 		msg, _ := json.Marshal(gin.H{
-			"city_id" : temp.CityID,
-			"min" : temp.Min,
-			"max" : temp.Max,
-			"timestamp" : temp.Timestamp,
+			"city_id":   temp.CityID,
+			"min":       temp.Min,
+			"max":       temp.Max,
+			"timestamp": temp.Timestamp,
 		})
 		publishmsg(msg)
 		c.JSON(200, temp)
@@ -62,11 +62,12 @@ func GetForecasts(c *gin.Context) {
 	//var id int64
 	ctx, _ := context.WithTimeout(context.Background(), 1*time.Minute)
 	err := db.Db.QueryRowContext(ctx, `SELECT city_id, avg(min), avg(max), COUNT(city_id) FROM temperature
-	WHERE city_id=$1 GROUP BY city_id`, city_id).Scan(&forecast.CityID, &forecast.Min, &forecast.Max, &forecast.Sample)
+	WHERE city_id=$1 AND created_at >= NOW() - INTERVAL '24 HOURS'
+	GROUP BY city_id`, city_id).Scan(&forecast.CityID, &forecast.Min, &forecast.Max, &forecast.Sample)
 	if err != nil {
 		if err.Error() == "sql: no rows in result set" {
 			c.JSON(404, gin.H{
-				"error": "Record Not Found",
+				"error": "No Records Found",
 			})
 			return
 		}

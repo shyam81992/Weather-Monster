@@ -29,7 +29,7 @@ func TestTemperature(t *testing.T) {
 func TestForecasts(t *testing.T) {
 	config.LoadConfig()
 
-	t.Run("Forecast", testForcastRequest(17, 200))
+	t.Run("Forecast", testForcastRequest(1, 200))
 
 	t.Run("Forecast doesn't return records", testForcastRequest(10000, 404))
 
