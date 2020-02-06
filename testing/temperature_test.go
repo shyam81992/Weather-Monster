@@ -14,12 +14,12 @@ func TestTemperature(t *testing.T) {
 	config.LoadConfig()
 
 	t.Run("Temperature creation", testTemperatureCreation(gin.H{
-		"city_id": 17,
+		"city_id": 1,
 		"max":     35,
 		"min":     32,
 	}, 200))
 	t.Run("Temperature creation need to throw error on city not found", testTemperatureCreation(gin.H{
-		"city_id": 1,
+		"city_id": 198908,
 		"max":     35,
 		"min":     32,
 	}, 404))
