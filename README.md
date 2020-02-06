@@ -33,6 +33,6 @@ Another way(use cascade and reference constraints)
 Test cases:  Now the test cases just verify only response status which can improved to validate the response data.
 
 Weather-Monster-Job
-Now it only listens to the temperature creation event and notify the subscriber which can be improved to have filter (ex : filter option can be provided at the webhook level). If notification per second is high we can improve the performance of it by scaling through region or by any other factor.(Kinesis,sqs, rabbitmq)
+Now it only listens to the temperature creation event and notify the subscriber which can be improved to have filter (ex : filter option can be provided at the webhook level). If notification per second is high we can improve the performance of it by scaling through region or by any other factor.(Kinesis, sqs, sns, rabbitmq)
 
  
