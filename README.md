@@ -23,7 +23,7 @@ Steps to run the project
 
 Note: If you are running on windows please install git bash so that you can the shell script  ". config/dev.sh"
     
-Area of improvements :
+Area of improvements:
 
 PATCH /cities/:id route expects all the three parameters to be present in the patch  body that can be improved to accept if any one of the  parameter is present in the patch body.
 
