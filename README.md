@@ -2,7 +2,9 @@
 
 
 Dependencies
+
 Golang 1.13 or higher
+
 Docker for Mac/Windows
 
 github.com/shyam81992/Weather-Monster-job // Which is used to notify the subscribers on temperature record creation
