@@ -23,6 +23,7 @@ Steps to run the project
 Note: If you are running on windows please install git bash so that you can the shell script  ". config/dev.sh"
     
 Area of improvements :
+
 PATCH /cities/:id route expects all the three parameters to be present in the patch  body that can be improved to accept if any one of the  parameter is present in the patch body.
 
 Delete  /cities/:id   Now this route deletes the record from the city and adds it to the delete_city table. I went with this approach  because we try to delete the historic data form temperature table will result in performance issue. So that now we can delete or archive  the data form temperature table and webhook table lazily.
