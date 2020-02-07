@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 	"strconv"
+	"time"
 
 	_ "github.com/lib/pq"
 	"github.com/shyam81992/Weather-Monster/config"
@@ -30,6 +31,12 @@ func InitDb() (err error) {
 	if err != nil {
 		panic(err)
 	}
+
+	Db.SetMaxOpenConns(10)
+	Db.SetMaxIdleConns(10)
+	Db.SetConnMaxLifetime(time.Hour)
+
+
 	fmt.Println("Successfully connected to db")
 	return nil
 
