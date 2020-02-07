@@ -11,15 +11,19 @@ github.com/shyam81992/Weather-Monster-job // Which is used to notify the subscri
 
 Steps to run the project 
 
-    1. Create a base folder and clone the projects github.com/shyam81992/Weather-Monster and github.com/shyam81992/Weather-Monster-job
+    1. Create a base folder and clone the projects github.com/shyam81992/Weather-Monster and 
+        github.com/shyam81992/Weather-Monster-job
     2. Run go mod tidy to install the dependencies.
-    3. Open a new terminal and go to the folder base_folder/Weather-Monster/postgres and run the command docker-compose up (To start the postgres db).
-    4. Open a new terminal and go to the folder base_folder/Weather-Monster/rabbitmq and run the command docker-compose up (To start the Rabbitmq).
-    5. Open a new terminal and go to the folder base_folder/Weather-Monster-job and run the command 
-        . config/dev.sh && go run main.go (To start the Weather-Monster-job)
-    6. Open a new terminal and go to the folder base_folder/Weather-Monster and run the command 
-        . config/dev.sh && go run main.go (To start the Weather-Monster)
-    7. To run the testcases Open a new terminal and go to the folder base_folder/Weather-Monster/tescases and run the command . ../config/dev.sh && go test -v
+    3. Open a new terminal and go to the folder base_folder/Weather-Monster/postgres and 
+        run the command docker-compose up (To start the postgres db).
+    4. Open a new terminal and go to the folder base_folder/Weather-Monster/rabbitmq and 
+        run the command docker-compose up (To start the Rabbitmq).
+    5. Open a new terminal and go to the folder base_folder/Weather-Monster-job and 
+        run the command . config/dev.sh && go run main.go (To start the Weather-Monster-job)
+    6. Open a new terminal and go to the folder base_folder/Weather-Monster and 
+        run the command . config/dev.sh && go run main.go (To start the Weather-Monster)
+    7. To run the testcases Open a new terminal and go to the folder base_folder/Weather-Monster/tescases 
+        and run the command . ../config/dev.sh && go test -v
 
 Note: If you are running on windows please install git bash so that you can able to run the shell script  ". config/dev.sh"
     
