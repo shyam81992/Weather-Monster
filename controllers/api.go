@@ -14,7 +14,7 @@ func API1(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	fmt.Printf("fullath = %s  data = %+v\n", c.Request.URL, temp)
+	fmt.Printf("fullpath = %s  data = %+v\n", c.Request.URL, temp)
 
 	c.JSON(200, temp)
 
