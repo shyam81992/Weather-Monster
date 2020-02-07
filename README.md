@@ -21,7 +21,7 @@ Steps to run the project
         . config/dev.sh && go run main.go
     7. To run the testcases go to the tescases folder and run the command . ../config/dev.sh && go test -v
 
-Note: If you are running on windows please install git bash so that you can run the shell script  ". config/dev.sh"
+Note: If you are running on windows please install git bash so that you can able to run the shell script  ". config/dev.sh"
     
 Area of improvements:
 
