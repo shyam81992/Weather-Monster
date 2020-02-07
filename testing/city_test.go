@@ -23,6 +23,9 @@ func TestCity(t *testing.T) {
 
 	t.Run("City Deletion", testCityDeletion(gin.H{"name": "bangalore-" + randomstr, "latitude": 52.520008, "longitude": 13.404954}, 200))
 
+	t.Run("City creation throw error on duplicate", testCityCreation(gin.H{"name": "Berlin-" + randomstr, "latitude": 52.520008, "longitude": 13.404954}, 403))
+	
+
 }
 
 func testCityCreation(city gin.H, status int) func(*testing.T) {
@@ -36,7 +39,7 @@ func testCityCreation(city gin.H, status int) func(*testing.T) {
 
 		reqerr := RequestToWM(req)
 
-		if reqerr != nil {
+		if reqerr != nil && reqerr.Code != status {
 			t.Error(fmt.Sprintf("Error in creating the city %v ", city))
 		}
 	}
