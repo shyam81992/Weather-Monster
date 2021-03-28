@@ -16,6 +16,6 @@ rabbitmq/data
 main
 
 .env
-
+vendor
 # Dependency directories (remove the comment below to include it)
 # vendor/

@@ -43,11 +43,10 @@ func testWebHookCreation(temp gin.H, status int) func(*testing.T) {
 	}
 }
 
-
 func testWebHookDeletion(temp gin.H, status int) func(*testing.T) {
 	return func(t *testing.T) {
 
-		var wh  models.WebHook
+		var wh models.WebHook
 		msg, _ := json.Marshal(temp)
 		req := Req{
 			URI:    "http://" + config.AppConfig["host"] + ":" + config.AppConfig["port"] + "/webhooks",
@@ -68,7 +67,7 @@ func testWebHookDeletion(temp gin.H, status int) func(*testing.T) {
 
 		reqerr = RequestToWM(req)
 
-		if reqerr != nil {
+		if reqerr != nil && reqerr.Code != status {
 			t.Error(fmt.Sprintf("Error in deleting the webhook %v ", wh))
 		}
 	}

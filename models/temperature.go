@@ -1,12 +1,10 @@
 package models
 
 import (
-	"context"
-	"fmt"
-	"time"
-
-	"github.com/shyam81992/Weather-Monster/db"
+	"github.com/gin-gonic/gin"
 )
+
+//go:generate mockgen -destination=./mock/temperature.go -package=mock github.com/shyam81992/Weather-Monster/models TemperatureCtlInteface
 
 // Temperature modal
 type Temperature struct {
@@ -25,21 +23,8 @@ type Forecast struct {
 	Sample int64   `form:"sample" json:"sample"`
 }
 
-// CreateCityTable creates City table if not exits
-func CreateTemperatureTable() {
-	ctx, _ := context.WithTimeout(context.Background(), 1*time.Minute)
-	sqlStatement := `CREATE TABLE IF NOT EXISTS temperature (
-		id SERIAL primary key NOT NULL,
-		city_id Integer NOT NULL,
-		min numeric NOT NULL,
-		max numeric NOT NULL,
-		created_at timestamptz NOT NULL DEFAULT NOW()
-	  )`
-	_, err := db.Db.ExecContext(ctx, sqlStatement)
-	if err != nil {
-		fmt.Println("error in creating city table")
-		fmt.Println(err.Error())
-		panic(err)
-	}
-
+type TemperatureCtlInteface interface {
+	CreateTemperatureTable()
+	CreateTemperature(*gin.Context)
+	GetForecasts(*gin.Context)
 }
