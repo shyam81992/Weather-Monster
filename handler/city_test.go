@@ -59,9 +59,9 @@ func TestCreateCity(t *testing.T) {
 		{
 			name: "Insert Record Success",
 			input: gin.H{
-				"name":      "notanemail",
-				"latitude":  12.123,
-				"longitude": 123.213,
+				"name":      "Chennai",
+				"latitude":  13.0827,
+				"longitude": 80.2707,
 			},
 			buildStubs: func(mockDb *db.MockIDB, mockRow *db.MockIRow) {
 				mockDb.EXPECT().QueryRowContext(gomock.Any(), gomock.Any(), gomock.Any(), gomock.Any(), gomock.Any()).Return(mockRow)
@@ -78,8 +78,8 @@ func TestCreateCity(t *testing.T) {
 		{
 			name: "Bad request data",
 			input: gin.H{
-				"name":     "notanemail",
-				"latitude": 12.123,
+				"name":     "Chennai",
+				"latitude": 13.0827,
 			},
 			buildStubs: func(mockDb *db.MockIDB, mockRow *db.MockIRow) {
 			},
@@ -90,9 +90,9 @@ func TestCreateCity(t *testing.T) {
 		{
 			name: "Data Conflict level 1",
 			input: gin.H{
-				"name":      "notanemail",
-				"latitude":  12.123,
-				"longitude": 123.213,
+				"name":      "Chennai",
+				"latitude":  13.0827,
+				"longitude": 80.2707,
 			},
 			buildStubs: func(mockDb *db.MockIDB, mockRow *db.MockIRow) {
 				mockDb.EXPECT().QueryRowContext(gomock.Any(), gomock.Any(), gomock.Any(), gomock.Any(), gomock.Any()).Return(mockRow)
@@ -105,9 +105,9 @@ func TestCreateCity(t *testing.T) {
 		{
 			name: "Data Conflict level 2",
 			input: gin.H{
-				"name":      "notanemail",
-				"latitude":  12.123,
-				"longitude": 123.213,
+				"name":      "Chennai",
+				"latitude":  13.0827,
+				"longitude": 80.2707,
 			},
 			buildStubs: func(mockDb *db.MockIDB, mockRow *db.MockIRow) {
 				mockDb.EXPECT().QueryRowContext(gomock.Any(), gomock.Any(), gomock.Any(), gomock.Any(), gomock.Any()).Return(mockRow)
@@ -120,9 +120,9 @@ func TestCreateCity(t *testing.T) {
 		{
 			name: "Internal server ERROR level 1",
 			input: gin.H{
-				"name":      "notanemail",
-				"latitude":  12.123,
-				"longitude": 123.213,
+				"name":      "Chennai",
+				"latitude":  13.0827,
+				"longitude": 80.2707,
 			},
 			buildStubs: func(mockDb *db.MockIDB, mockRow *db.MockIRow) {
 				mockDb.EXPECT().QueryRowContext(gomock.Any(), gomock.Any(), gomock.Any(), gomock.Any(), gomock.Any()).Return(mockRow)
@@ -135,9 +135,9 @@ func TestCreateCity(t *testing.T) {
 		{
 			name: "Internal server ERROR level 2",
 			input: gin.H{
-				"name":      "notanemail",
-				"latitude":  12.123,
-				"longitude": 123.213,
+				"name":      "Chennai",
+				"latitude":  13.0827,
+				"longitude": 80.2707,
 			},
 			buildStubs: func(mockDb *db.MockIDB, mockRow *db.MockIRow) {
 				mockDb.EXPECT().QueryRowContext(gomock.Any(), gomock.Any(), gomock.Any(), gomock.Any(), gomock.Any()).Return(mockRow)
@@ -215,9 +215,9 @@ func TestUpdateCity(t *testing.T) {
 		{
 			name: "Updated Record Success",
 			input: gin.H{
-				"name":      "notanemail",
-				"latitude":  12.123,
-				"longitude": 123.213,
+				"name":      "Chennai",
+				"latitude":  13.0827,
+				"longitude": 80.2707,
 			},
 			buildStubs: func(mockDb *db.MockIDB, mockSqlResult *db.MockResult) {
 				mockDb.EXPECT().ExecContext(gomock.Any(), gomock.Any(), gomock.Any(),
@@ -231,8 +231,8 @@ func TestUpdateCity(t *testing.T) {
 		{
 			name: "Bad Request",
 			input: gin.H{
-				"name":     "notanemail",
-				"latitude": 12.123,
+				"name":     "Chennai",
+				"latitude": 13.0827,
 			},
 			buildStubs: func(mockDb *db.MockIDB, mockSqlResult *db.MockResult) {
 			},
@@ -243,9 +243,9 @@ func TestUpdateCity(t *testing.T) {
 		{
 			name: "Internal Server Error Level 1",
 			input: gin.H{
-				"name":      "notanemail",
-				"latitude":  12.123,
-				"longitude": 123.213,
+				"name":      "Chennai",
+				"latitude":  13.0827,
+				"longitude": 80.2707,
 			},
 			buildStubs: func(mockDb *db.MockIDB, mockSqlResult *db.MockResult) {
 				mockDb.EXPECT().ExecContext(gomock.Any(), gomock.Any(), gomock.Any(),
@@ -259,9 +259,9 @@ func TestUpdateCity(t *testing.T) {
 		{
 			name: "Internal Server Error Level 2",
 			input: gin.H{
-				"name":      "notanemail",
-				"latitude":  12.123,
-				"longitude": 123.213,
+				"name":      "Chennai",
+				"latitude":  13.0827,
+				"longitude": 80.2707,
 			},
 			buildStubs: func(mockDb *db.MockIDB, mockSqlResult *db.MockResult) {
 				mockDb.EXPECT().ExecContext(gomock.Any(), gomock.Any(), gomock.Any(),
@@ -275,9 +275,9 @@ func TestUpdateCity(t *testing.T) {
 		{
 			name: "Resource Not Found",
 			input: gin.H{
-				"name":      "notanemail",
-				"latitude":  12.123,
-				"longitude": 123.213,
+				"name":      "Chennai",
+				"latitude":  13.0827,
+				"longitude": 80.2707,
 			},
 			buildStubs: func(mockDb *db.MockIDB, mockSqlResult *db.MockResult) {
 				mockDb.EXPECT().ExecContext(gomock.Any(), gomock.Any(), gomock.Any(),
